@@ -5,3 +5,8 @@ node_modules/
 test.db
 .tmp/
 build/
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
