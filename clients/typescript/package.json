@@ -1,6 +1,6 @@
 {
   "version": "0.12.1",
-  "name": "electric-sql",
+  "name": "@anta-semenov/electric-sql",
   "description": "ElectricSQL TypeScript client for developing local-first SQL apps. Supports JavaScript based mobile, web and edge applications.",
   "repository": "https://github.com/electric-sql/electric/tree/main/clients/typescript",
   "author": "Electric DB Limited",
@@ -282,5 +282,8 @@
     "vue": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }

@@ -17,3 +17,7 @@
 
 e2e/lux
 e2e/lux_logs
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

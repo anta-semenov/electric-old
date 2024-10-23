@@ -33,3 +33,8 @@ electric-*.tar
 
 # macOS files
 .DS_Store
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
