@@ -171,7 +171,7 @@
     "generate-test-client": "npx tsx ../../components/cli/src/client/generateTestClient.ts",
     "typecheck": "tsc -p tsconfig.json",
     "posttest": "npm run typecheck",
-    "prepublishOnly": "pnpm run build",
+    "prepublishOnly": "../../node_modules/.bin/dotenvx run -- pnpm run build",
     "lint": "eslint src --fix",
     "check-styleguide": "prettier --check --loglevel warn . && eslint . --quiet",
     "format": "prettier --write --loglevel warn ."
