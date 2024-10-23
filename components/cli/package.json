@@ -22,7 +22,7 @@
     "dist"
   ],
   "bin": {
-    "electric-sql": "dist/main.js"
+    "@anta-semenov/electric-sql": "dist/main.js"
   },
   "scripts": {
     "build": "shx rm -rf dist && pnpm build:copy-docker && concurrently \"tsup\" \"tsc -p tsconfig.build.json\" && node ./scripts/fix-imports.js",
@@ -48,7 +48,7 @@
     "commander": "^11.1.0",
     "decompress": "^4.2.1",
     "dotenv-flow": "^4.1.0",
-    "electric-sql": "workspace:*",
+    "@anta-semenov/electric-sql": "workspace:*",
     "get-port": "^7.0.0",
     "prisma": "4.8.1",
     "ts-dedent": "^2.2.0",

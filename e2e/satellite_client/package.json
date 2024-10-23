@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "better-sqlite3": "^11.0.0",
-    "electric-sql": "workspace:*",
+    "@anta-semenov/electric-sql": "workspace:*",
     "jsonwebtoken": "^9.0.0",
     "pg": "^8.11.3",
     "ts-dedent": "^2.2.0",
