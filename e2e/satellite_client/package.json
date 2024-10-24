@@ -26,7 +26,7 @@
     "zod": "3.21.1"
   },
   "devDependencies": {
-    "@electric-sql/prisma-generator": "workspace:*",
+    "@anta-semenov/electric-sql-prisma-generator": "workspace:*",
     "@prisma/client": "4.8.1",
     "@tsmodule/tsmodule": "^44.7.0",
     "@types/better-sqlite3": "7.6.3",

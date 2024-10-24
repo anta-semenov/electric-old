@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
-  "name": "@electric-sql/drivers",
+  "name": "@anta-semenov/electric-sql-drivers",
   "description": "ElectricSQL database drivers.",
   "repository": "https://github.com/electric-sql/electric/tree/main/components/drivers",
   "author": "Electric DB Limited",
@@ -103,5 +103,8 @@
     "wa-sqlite": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }

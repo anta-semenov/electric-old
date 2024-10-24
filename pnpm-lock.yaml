@@ -18,7 +18,7 @@ importers:
 
   clients/typescript:
     dependencies:
-      '@electric-sql/drivers':
+      '@anta-semenov/electric-sql-drivers':
         specifier: workspace:*
         version: link:../../components/drivers
       async-mutex:
@@ -232,7 +232,7 @@ importers:
       '@anta-semenov/electric-sql':
         specifier: workspace:*
         version: link:../../clients/typescript
-      '@electric-sql/prisma-generator':
+      '@anta-semenov/electric-sql-prisma-generator':
         specifier: workspace:*
         version: link:../../generator
       '@prisma/client':
@@ -429,7 +429,7 @@ importers:
       '@anta-semenov/electric-sql':
         specifier: workspace:~
         version: link:../../clients/typescript
-      '@electric-sql/drivers':
+      '@anta-semenov/electric-sql-drivers':
         specifier: workspace:~
         version: link:../drivers
       '@electric-sql/pglite':
@@ -508,7 +508,7 @@ importers:
         specifier: 3.21.1
         version: 3.21.1
     devDependencies:
-      '@electric-sql/prisma-generator':
+      '@anta-semenov/electric-sql-prisma-generator':
         specifier: workspace:*
         version: link:../../generator
       '@prisma/client':
