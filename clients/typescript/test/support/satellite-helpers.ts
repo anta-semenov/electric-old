@@ -1,4 +1,4 @@
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import {
   QueryBuilder,
   pgBuilder,

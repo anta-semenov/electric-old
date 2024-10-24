@@ -1,4 +1,4 @@
-import { DatabaseAdapter, RunResult } from '@electric-sql/drivers'
+import { DatabaseAdapter, RunResult } from '@anta-semenov/electric-sql-drivers'
 import { QueryBuilder } from 'squel'
 import { DB } from './db'
 import { TransactionalDB } from './transactionalDB'
@@ -13,7 +13,7 @@ export class Executor {
     private _notifier: Notifier,
     private _fields: Fields,
     private _converter: Converter
-  ) {}
+  ) { }
 
   async runInTransaction(
     qs: QueryBuilder[],

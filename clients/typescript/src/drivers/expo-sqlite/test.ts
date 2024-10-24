@@ -12,8 +12,8 @@ import { MockRegistry } from '../../satellite/mock'
 import {
   DatabaseAdapter,
   MockDatabase,
-} from '@electric-sql/drivers/expo-sqlite'
-import type { Database } from '@electric-sql/drivers/expo-sqlite'
+} from '@anta-semenov/electric-sql-drivers/expo-sqlite'
+import type { Database } from '@anta-semenov/electric-sql-drivers/expo-sqlite'
 import { MockSocket } from '../../sockets/mock'
 import { ElectricConfig } from '../../config'
 import { ElectricClient } from '../../client/model/client'

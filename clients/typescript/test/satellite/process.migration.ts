@@ -25,7 +25,7 @@ import {
   getPgMatchingShadowEntries,
 } from '../support/satellite-helpers'
 
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import isEqual from 'lodash.isequal'
 import { QueryBuilder } from '../../src/migrators/query-builder'
 
@@ -34,8 +34,8 @@ export type ContextType = CommonContextType & {
   txDate: Date
   builder: QueryBuilder
   getMatchingShadowEntries:
-    | typeof getSqliteMatchingShadowEntries
-    | typeof getPgMatchingShadowEntries
+  | typeof getSqliteMatchingShadowEntries
+  | typeof getPgMatchingShadowEntries
 }
 
 type ColumnInfo = {
@@ -729,7 +729,7 @@ export const processMigrationTests = (test: TestFn<ContextType>) => {
     // Now also check the row that was concurrently inserted
     t.assert(
       isequal(conflictingRow, extendRow(insertRowA)) ||
-        isequal(conflictingRow, extendRow(insertRowB))
+      isequal(conflictingRow, extendRow(insertRowB))
     )
   })
 

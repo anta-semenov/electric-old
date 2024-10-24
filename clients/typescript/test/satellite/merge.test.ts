@@ -23,8 +23,8 @@ import {
 import { DatabaseAdapter as SQLiteDatabaseAdapter } from '../../src/drivers/better-sqlite3'
 import { DatabaseAdapter as PgDatabaseAdapter } from '../../src/drivers/node-postgres'
 import { DatabaseAdapter as PgliteDatabaseAdapter } from '../../src/drivers/pglite'
-import { DatabaseAdapter as DatabaseAdapterInterface } from '@electric-sql/drivers'
-import { makePgDatabase } from '@electric-sql/drivers/node-postgres'
+import { DatabaseAdapter as DatabaseAdapterInterface } from '@anta-semenov/electric-sql-drivers'
+import { makePgDatabase } from '@anta-semenov/electric-sql-drivers/node-postgres'
 import { randomValue } from '../../src/util/random'
 import { PGlite } from '@electric-sql/pglite'
 
@@ -211,84 +211,84 @@ const setupPglite: SetupFn = async (t: ExecutionContext<unknown>) => {
   return [new PgliteDatabaseAdapter(db), pgBuilder, namespace, defaults]
 }
 
-;(
-  [
-    ['SQLite', setupSqlite],
-    ['Postgres', setupPG],
-    ['PGlite', setupPglite],
-  ] as const
-).forEach(([dialect, setup]) => {
-  test(`(${dialect}) merge works on oplog entries`, async (t) => {
-    const [adapter, builder, namespace, defaults] = await setup(t)
+  ; (
+    [
+      ['SQLite', setupSqlite],
+      ['Postgres', setupPG],
+      ['PGlite', setupPglite],
+    ] as const
+  ).forEach(([dialect, setup]) => {
+    test(`(${dialect}) merge works on oplog entries`, async (t) => {
+      const [adapter, builder, namespace, defaults] = await setup(t)
 
-    // Migrate the DB with the necessary tables and triggers
-    const personTable = getPersonTable(namespace)
-    const qualifiedPersonTable = personTable.qualifiedTableName
-    await migrateDb(adapter, personTable, builder)
+      // Migrate the DB with the necessary tables and triggers
+      const personTable = getPersonTable(namespace)
+      const qualifiedPersonTable = personTable.qualifiedTableName
+      await migrateDb(adapter, personTable, builder)
 
-    // Insert a row in the table
-    const insertRowSQL = `INSERT INTO ${qualifiedPersonTable} (id, name, age, bmi, int8, blob) VALUES (54321, 'John Doe', 30, 25.5, 7, ${builder.hexValue(
-      '0001ff'
-    )})`
-    await adapter.run({ sql: insertRowSQL })
+      // Insert a row in the table
+      const insertRowSQL = `INSERT INTO ${qualifiedPersonTable} (id, name, age, bmi, int8, blob) VALUES (54321, 'John Doe', 30, 25.5, 7, ${builder.hexValue(
+        '0001ff'
+      )})`
+      await adapter.run({ sql: insertRowSQL })
 
-    // Fetch the oplog entry for the inserted row
-    const oplogTable = `${defaults.oplogTable}`
-    const oplogRows = await adapter.query({
-      sql: `SELECT * FROM ${oplogTable}`,
-    })
+      // Fetch the oplog entry for the inserted row
+      const oplogTable = `${defaults.oplogTable}`
+      const oplogRows = await adapter.query({
+        sql: `SELECT * FROM ${oplogTable}`,
+      })
 
-    t.is(oplogRows.length, 1)
+      t.is(oplogRows.length, 1)
 
-    const oplogEntry = oplogRows[0] as unknown as OplogEntry
+      const oplogEntry = oplogRows[0] as unknown as OplogEntry
 
-    // Define a transaction that happened concurrently
-    // and inserts a row with the same id but different values
-    const tx: DataTransaction = {
-      lsn: DEFAULT_LOG_POS,
-      commit_timestamp: to_commit_timestamp('1970-01-02T03:46:42.000Z'),
-      changes: [
-        {
-          relation:
-            relations[qualifiedPersonTable.tablename as keyof typeof relations],
-          type: DataChangeType.INSERT,
-          record: {
-            // fields must be ordered alphabetically to match the behavior of the triggers
-            age: 30,
-            blob: new Uint8Array([0, 1, 255]),
-            bmi: 21.3,
-            id: 54321,
-            int8: '224', // Big ints are serialized as strings in the oplog
-            name: 'John Doe',
+      // Define a transaction that happened concurrently
+      // and inserts a row with the same id but different values
+      const tx: DataTransaction = {
+        lsn: DEFAULT_LOG_POS,
+        commit_timestamp: to_commit_timestamp('1970-01-02T03:46:42.000Z'),
+        changes: [
+          {
+            relation:
+              relations[qualifiedPersonTable.tablename as keyof typeof relations],
+            type: DataChangeType.INSERT,
+            record: {
+              // fields must be ordered alphabetically to match the behavior of the triggers
+              age: 30,
+              blob: new Uint8Array([0, 1, 255]),
+              bmi: 21.3,
+              id: 54321,
+              int8: '224', // Big ints are serialized as strings in the oplog
+              name: 'John Doe',
+            },
+            tags: [],
           },
-          tags: [],
-        },
-      ],
-    }
+        ],
+      }
 
-    // Merge the oplog entry with the transaction
-    const merged = mergeEntries(
-      'local',
-      [oplogEntry],
-      'remote',
-      fromTransaction(tx, relations, namespace),
-      relations
-    )
+      // Merge the oplog entry with the transaction
+      const merged = mergeEntries(
+        'local',
+        [oplogEntry],
+        'remote',
+        fromTransaction(tx, relations, namespace),
+        relations
+      )
 
-    const pk = primaryKeyToStr({ id: 54321 })
+      const pk = primaryKeyToStr({ id: 54321 })
 
-    // the incoming transaction wins
-    const qualifiedTableName = qualifiedPersonTable.toString()
-    t.like(merged, {
-      [qualifiedTableName]: { [pk]: { optype: 'UPSERT' } },
-    })
-    t.deepEqual(merged[qualifiedTableName][pk].fullRow, {
-      id: 54321,
-      name: 'John Doe',
-      age: 30,
-      blob: new Uint8Array([0, 1, 255]),
-      bmi: 21.3,
-      int8: 224n,
+      // the incoming transaction wins
+      const qualifiedTableName = qualifiedPersonTable.toString()
+      t.like(merged, {
+        [qualifiedTableName]: { [pk]: { optype: 'UPSERT' } },
+      })
+      t.deepEqual(merged[qualifiedTableName][pk].fullRow, {
+        id: 54321,
+        name: 'John Doe',
+        age: 30,
+        blob: new Uint8Array([0, 1, 255]),
+        bmi: 21.3,
+        int8: 224n,
+      })
     })
   })
-})

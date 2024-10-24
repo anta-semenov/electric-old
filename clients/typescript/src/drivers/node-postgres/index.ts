@@ -1,9 +1,9 @@
-import { DatabaseAdapter as DatabaseAdapterI } from '@electric-sql/drivers'
+import { DatabaseAdapter as DatabaseAdapterI } from '@anta-semenov/electric-sql-drivers'
 import {
   DatabaseAdapter,
   createEmbeddedPostgres,
-} from '@electric-sql/drivers/node-postgres'
-import type { Database } from '@electric-sql/drivers/node-postgres'
+} from '@anta-semenov/electric-sql-drivers/node-postgres'
+import type { Database } from '@anta-semenov/electric-sql-drivers/node-postgres'
 import { ElectricConfig } from '../../config'
 import { electrify as baseElectrify, ElectrifyOptions } from '../../electric'
 import { WebSocketNode } from '../../sockets/node'

@@ -1,4 +1,4 @@
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import { DbTableInfo, TableColumn } from './interface'
 
 export type SqlDialect = 'sqlite' | 'postgres'

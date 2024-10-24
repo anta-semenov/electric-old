@@ -8,9 +8,9 @@ import {
   electrify as baseElectrify,
 } from '../../electric/index'
 
-import { DatabaseAdapter } from '@electric-sql/drivers/expo-sqlite'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers/expo-sqlite'
 import { ElectricConfig } from '../../config'
-import type { Database } from '@electric-sql/drivers/expo-sqlite'
+import type { Database } from '@anta-semenov/electric-sql-drivers/expo-sqlite'
 
 import { ElectricClient } from '../../client/model/client'
 import { DbSchema } from '../../client/model/schema'

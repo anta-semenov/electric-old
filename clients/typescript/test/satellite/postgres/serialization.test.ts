@@ -1,5 +1,5 @@
 import anyTest, { ExecutionContext, TestFn } from 'ava'
-import { makePgDatabase } from '@electric-sql/drivers/node-postgres'
+import { makePgDatabase } from '@anta-semenov/electric-sql-drivers/node-postgres'
 import { randomValue } from '../../../src/util/random'
 import { opts } from '../common'
 import { ContextType, SetupFn, serializationTests } from '../serialization'

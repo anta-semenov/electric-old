@@ -1,5 +1,5 @@
 import { ElectricConfigWithDialect, hydrateConfig } from '../config/index'
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import { Migrator } from '../migrators/index'
 import { EventNotifier, Notifier } from '../notifiers/index'
 import { globalRegistry, Registry } from '../satellite/index'

@@ -1,5 +1,5 @@
 import { InternalElectricConfig, HydratedConfig } from '../config/index'
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import { Migrator } from '../migrators/index'
 import { Notifier } from '../notifiers/index'
 import { DbName } from '../util/types'

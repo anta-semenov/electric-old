@@ -1,5 +1,5 @@
 import { AuthState } from '../auth/index'
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import { Migrator } from '../migrators/index'
 import { Notifier } from '../notifiers/index'
 import { sleepAsync } from '../util/timer'
@@ -130,8 +130,8 @@ export class MockSatelliteProcess implements Satellite {
     await this.connect()
   }
 
-  disconnect(): void {}
-  clientDisconnect(): void {}
+  disconnect(): void { }
+  clientDisconnect(): void { }
 
   authenticate(_token: string): Promise<void> {
     return Promise.resolve()
@@ -144,9 +144,9 @@ export class MockSatelliteProcess implements Satellite {
   setReplicationTransform(
     _tableName: QualifiedTablename,
     _transform: ReplicatedRowTransformer<DataRecord>
-  ): void {}
+  ): void { }
 
-  clearReplicationTransform(_tableName: QualifiedTablename): void {}
+  clearReplicationTransform(_tableName: QualifiedTablename): void { }
 }
 
 export class MockRegistry extends BaseRegistry {
@@ -201,8 +201,7 @@ type Events = {
 }
 export class MockSatelliteClient
   extends AsyncEventEmitter<Events>
-  implements Client
-{
+  implements Client {
   isDown = false
   replicating = false
   disconnected = true

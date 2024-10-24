@@ -9,7 +9,7 @@ import {
 } from '../../util'
 import { LiveResultContext } from './model'
 import { Notifier } from '../../notifiers'
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import {
   GlobalRegistry,
   Registry,
@@ -41,19 +41,19 @@ export type ClientTables<DB extends DbSchema<any>> = {
     infer ScalarFieldEnum,
     infer GetPayload
   >
-    ? Table<
-        T,
-        CreateData,
-        UpdateData,
-        Select,
-        Where,
-        WhereUnique,
-        Include,
-        OrderBy,
-        ScalarFieldEnum,
-        GetPayload
-      >
-    : never
+  ? Table<
+    T,
+    CreateData,
+    UpdateData,
+    Select,
+    Where,
+    WhereUnique,
+    Include,
+    OrderBy,
+    ScalarFieldEnum,
+    GetPayload
+  >
+  : never
 }
 
 interface RawQueries {

@@ -7,7 +7,7 @@ import {
   personTable as getPersonTable,
 } from '../../satellite/common'
 import { pgBuilder } from '../../../src/migrators/query-builder'
-import { makePgDatabase } from '@electric-sql/drivers/node-postgres'
+import { makePgDatabase } from '@anta-semenov/electric-sql-drivers/node-postgres'
 import { Database, DatabaseAdapter } from '../../../src/drivers/node-postgres'
 import { ContextType, triggerTests } from '../triggers'
 
@@ -74,7 +74,7 @@ test('generateTableTriggers should create correct triggers for a table', (t) => 
         BEGIN
           -- Get the flag value from _electric_trigger_settings
           SELECT flag INTO flag_value FROM "public"._electric_trigger_settings WHERE namespace = 'public' AND tablename = 'personTable';
-  
+
           IF flag_value = 1 THEN
             -- Insert into _electric_oplog
             INSERT INTO "public"._electric_oplog (namespace, tablename, optype, "primaryKey", "newRow", "oldRow", timestamp)
@@ -88,7 +88,7 @@ test('generateTableTriggers should create correct triggers for a table', (t) => 
               NULL
             );
           END IF;
-  
+
           RETURN NEW;
         END;
       END;
@@ -119,7 +119,7 @@ test('generateTableTriggers should create correct triggers for a table', (t) => 
         BEGIN
           -- Get the flag value from _electric_trigger_settings
           SELECT flag INTO flag_value FROM "public"._electric_trigger_settings WHERE namespace = 'public' AND tablename = 'personTable';
-  
+
           IF flag_value = 1 THEN
             -- Insert into _electric_oplog
             INSERT INTO "public"._electric_oplog (namespace, tablename, optype, "primaryKey", "newRow", "oldRow", timestamp)
@@ -133,7 +133,7 @@ test('generateTableTriggers should create correct triggers for a table', (t) => 
               NULL
             );
           END IF;
-  
+
           RETURN NEW;
         END;
       END;
@@ -164,7 +164,7 @@ test('generateTableTriggers should create correct triggers for a table', (t) => 
         BEGIN
           -- Get the flag value from _electric_trigger_settings
           SELECT flag INTO flag_value FROM "public"._electric_trigger_settings WHERE namespace = 'public' AND tablename = 'personTable';
-  
+
           IF flag_value = 1 THEN
             -- Insert into _electric_oplog
             INSERT INTO "public"._electric_oplog (namespace, tablename, optype, "primaryKey", "newRow", "oldRow", timestamp)
@@ -178,7 +178,7 @@ test('generateTableTriggers should create correct triggers for a table', (t) => 
               NULL
             );
           END IF;
-  
+
           RETURN NEW;
         END;
       END;

@@ -1,4 +1,4 @@
-import { DatabaseAdapter, RunResult } from '@electric-sql/drivers'
+import { DatabaseAdapter, RunResult } from '@anta-semenov/electric-sql-drivers'
 import { QueryBuilder } from 'squel'
 import { DB } from './db'
 import * as z from 'zod'
@@ -12,7 +12,7 @@ export class NonTransactionalDB implements DB {
     private _adapter: DatabaseAdapter,
     private _fields: Fields,
     private _converter: Converter
-  ) {}
+  ) { }
 
   withTableSchema(fields: Fields) {
     return new NonTransactionalDB(this._adapter, fields, this._converter)

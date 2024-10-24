@@ -10,8 +10,8 @@ import { MockRegistry } from '../../satellite/mock'
 import {
   DatabaseAdapter as OPSqliteAdapter,
   MockDatabase,
-} from '@electric-sql/drivers/op-sqlite'
-import type { Database } from '@electric-sql/drivers/op-sqlite'
+} from '@anta-semenov/electric-sql-drivers/op-sqlite'
+import type { Database } from '@anta-semenov/electric-sql-drivers/op-sqlite'
 import { MockSocket } from '../../sockets/mock'
 import { ElectricClient } from '../../client/model/client'
 import { ElectricConfig } from '../../config'

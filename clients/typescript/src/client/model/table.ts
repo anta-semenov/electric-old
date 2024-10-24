@@ -9,7 +9,7 @@ import {
 } from '../validation/validation'
 import { UpdateInput, UpdateManyInput } from '../input/updateInput'
 import { DeleteInput, DeleteManyInput } from '../input/deleteInput'
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import { Builder, makeFilter } from './builder'
 import { Executor } from '../execution/executor'
 import { BatchPayload } from '../output/batchPayload'
@@ -64,19 +64,18 @@ export class Table<
   ScalarFieldEnum,
   GetPayload extends HKT
 > implements
-    Model<
-      T,
-      CreateData,
-      UpdateData,
-      Select,
-      Where,
-      WhereUnique,
-      Include,
-      OrderBy,
-      ScalarFieldEnum,
-      GetPayload
-    >
-{
+  Model<
+    T,
+    CreateData,
+    UpdateData,
+    Select,
+    Where,
+    WhereUnique,
+    Include,
+    OrderBy,
+    ScalarFieldEnum,
+    GetPayload
+  > {
   private _builder: Builder
   private _executor: Executor
   private _qualifiedTableName: QualifiedTablename
@@ -651,9 +650,9 @@ export class Table<
   >(
     i:
       | SelectSubset<
-          T,
-          FindInput<Select, Where, Include, OrderBy, ScalarFieldEnum>
-        >
+        T,
+        FindInput<Select, Where, Include, OrderBy, ScalarFieldEnum>
+      >
       | undefined,
     db: DB,
     continuation: (res: Kind<GetPayload, T> | null) => void,
@@ -708,7 +707,7 @@ export class Table<
         if (relatedObjects.length > 1)
           throw TypeError(
             `Relation on field '${relationField}' is one-to-one but found several related objects: ` +
-              JSON.stringify(relatedObjects)
+            JSON.stringify(relatedObjects)
           )
         // one-to-one or one-to-many relation and we fetched the related object on the one side.
         // so we assign the related object to `relationField`
@@ -889,9 +888,9 @@ export class Table<
   >(
     i:
       | SelectSubset<
-          T,
-          FindInput<Select, Where, Include, OrderBy, ScalarFieldEnum>
-        >
+        T,
+        FindInput<Select, Where, Include, OrderBy, ScalarFieldEnum>
+      >
       | undefined,
     db: DB,
     continuation: (res: Kind<GetPayload, T>[]) => void,
@@ -980,9 +979,9 @@ export class Table<
         const whereArg = isIncomingRelation
           ? obj.where
           : {
-              ...obj.where,
-              [toField]: fromFieldValue,
-            }
+            ...obj.where,
+            [toField]: fromFieldValue,
+          }
 
         relatedTbl._update(
           {
@@ -1143,8 +1142,8 @@ export class Table<
     const updateManyArray = Array.isArray(updateManyObject)
       ? updateManyObject
       : typeof updateManyObject === 'undefined'
-      ? []
-      : [updateManyObject]
+        ? []
+        : [updateManyObject]
 
     // update all the requested related objects
     forEach(
@@ -1229,8 +1228,8 @@ export class Table<
       const updateObjects = Array.isArray(updateObject)
         ? updateObject
         : typeof updateObject === 'undefined'
-        ? []
-        : [updateObject]
+          ? []
+          : [updateObject]
 
       forEach(
         (updateObj, cont) => {
@@ -1251,10 +1250,10 @@ export class Table<
                 // the object is not related to the object of the original `update` query
                 throw new InvalidArgumentError(
                   `Nested update cannot update an unrelated object.\n` +
-                    `Related object has field ${fromField} === ${toFieldValue}\n` +
-                    `but the object identified by ${JSON.stringify(
-                      updateObj
-                    )} has ${fromField} === ${updatedObj[fromField]}`
+                  `Related object has field ${fromField} === ${toFieldValue}\n` +
+                  `but the object identified by ${JSON.stringify(
+                    updateObj
+                  )} has ${fromField} === ${updatedObj[fromField]}`
                 )
               }
               cont()

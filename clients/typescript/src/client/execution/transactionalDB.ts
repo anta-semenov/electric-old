@@ -1,4 +1,4 @@
-import { RunResult, Transaction } from '@electric-sql/drivers'
+import { RunResult, Transaction } from '@anta-semenov/electric-sql-drivers'
 import { QueryBuilder } from 'squel'
 import { DB } from './db'
 import * as z from 'zod'
@@ -12,7 +12,7 @@ export class TransactionalDB implements DB {
     private _tx: Transaction,
     private _fields: Fields,
     private _converter: Converter
-  ) {}
+  ) { }
 
   withTableSchema(fields: Fields) {
     return new TransactionalDB(this._tx, fields, this._converter)

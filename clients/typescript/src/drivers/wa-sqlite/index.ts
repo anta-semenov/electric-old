@@ -1,12 +1,12 @@
 import {
   DatabaseAdapter,
   ElectricDatabase,
-} from '@electric-sql/drivers/wa-sqlite'
+} from '@anta-semenov/electric-sql-drivers/wa-sqlite'
 import { ElectricConfig } from '../../config'
 import { electrify as baseElectrify, ElectrifyOptions } from '../../electric'
 import { WebSocketWeb } from '../../sockets/web'
 import { ElectricClient, DbSchema } from '../../client/model'
-import type { Database } from '@electric-sql/drivers/wa-sqlite'
+import type { Database } from '@anta-semenov/electric-sql-drivers/wa-sqlite'
 
 export { DatabaseAdapter, ElectricDatabase }
 export type { Database }

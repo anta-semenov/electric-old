@@ -5,7 +5,7 @@ import {
   SatRelation_RelationType,
 } from '../_generated/protocol/satellite'
 import { AuthConfig, AuthState } from '../auth/index'
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import { Migrator } from '../migrators/index'
 import {
   AuthStateNotification,
@@ -808,8 +808,7 @@ export class SatelliteProcess implements Satellite {
     }
 
     Log.warn(
-      `an error occurred in satellite: ${
-        SatelliteErrorCode[satelliteError.code]
+      `an error occurred in satellite: ${SatelliteErrorCode[satelliteError.code]
       } ${satelliteError.message}`
     )
 
@@ -909,9 +908,9 @@ export class SatelliteProcess implements Satellite {
       const error = !connectRetryHandler(e, 0)
         ? e
         : new SatelliteError(
-            SatelliteErrorCode.CONNECTION_FAILED_AFTER_RETRY,
-            `Failed to connect to server after exhausting retry policy. Last error thrown by server: ${e.message}`
-          )
+          SatelliteErrorCode.CONNECTION_FAILED_AFTER_RETRY,
+          `Failed to connect to server after exhausting retry policy. Last error thrown by server: ${e.message}`
+        )
 
       this.disconnect(error)
       this.initializing?.reject(error)
@@ -1142,8 +1141,8 @@ export class SatelliteProcess implements Satellite {
           CASE WHEN shadow.tags = '[]' OR shadow.tags = ''
                THEN '["' || ${this.builder.makePositionalParam(1)} || '"]'
                ELSE '["' || ${this.builder.makePositionalParam(
-                 2
-               )} || '",' || substring(shadow.tags, 2)
+          2
+        )} || '",' || substring(shadow.tags, 2)
           END
       FROM ${shadow} AS shadow
       WHERE ${oplog}.namespace = shadow.namespace
@@ -1813,9 +1812,8 @@ export class SatelliteProcess implements Satellite {
     )
 
     return {
-      sql: `DELETE FROM "${qualifiedTableName.namespace}"."${
-        qualifiedTableName.tablename
-      }" WHERE ${params.where.join(' AND ')}`,
+      sql: `DELETE FROM "${qualifiedTableName.namespace}"."${qualifiedTableName.tablename
+        }" WHERE ${params.where.join(' AND ')}`,
       args: params.values,
     }
   }

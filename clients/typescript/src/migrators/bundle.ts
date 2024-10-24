@@ -5,7 +5,7 @@ import {
   Migrator,
   StmtMigration,
 } from './index'
-import { DatabaseAdapter } from '@electric-sql/drivers'
+import { DatabaseAdapter } from '@anta-semenov/electric-sql-drivers'
 import { buildInitialMigration as makeBaseMigration } from './schema'
 import Log from 'loglevel'
 import { QualifiedTablename, SatelliteError, SatelliteErrorCode } from '../util'
@@ -146,8 +146,8 @@ export abstract class BundleMigratorBase implements Migrator {
       sql: dedent`
         INSERT INTO ${this.migrationsTable} (version, applied_at)
         VALUES (${this.queryBuilder.makePositionalParam(
-          1
-        )}, ${this.queryBuilder.makePositionalParam(2)});
+        1
+      )}, ${this.queryBuilder.makePositionalParam(2)});
       `,
       args: [version, Date.now().toString()],
     })
