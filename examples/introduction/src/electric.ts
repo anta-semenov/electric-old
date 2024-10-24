@@ -1,11 +1,11 @@
-import { makeElectricContext } from 'electric-sql/react'
-import { LIB_VERSION } from 'electric-sql/version'
-import { ElectricDatabase, electrify } from 'electric-sql/wa-sqlite'
-import { uniqueTabId } from 'electric-sql/util'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
+import { LIB_VERSION } from '@anta-semenov/electric-sql/version'
+import { ElectricDatabase, electrify } from '@anta-semenov/electric-sql/wa-sqlite'
+import { uniqueTabId } from '@anta-semenov/electric-sql/util'
 import { userId } from './auth'
 import { ELECTRIC_URL, debugMode } from './config'
 import { Electric, schema } from './generated/client'
-import { insecureAuthToken } from 'electric-sql/auth'
+import { insecureAuthToken } from '@anta-semenov/electric-sql/auth'
 
 export type {
   Electric,

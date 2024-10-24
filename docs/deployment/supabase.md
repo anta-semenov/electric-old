@@ -169,7 +169,7 @@ For example:
 
 ```ts
 import { createClient } from '@supabase/supabase-js'
-import { ElectricDatabase, electrify } from 'electric-sql/wa-sqlite'
+import { ElectricDatabase, electrify } from '@anta-semenov/electric-sql/wa-sqlite'
 import { schema } from './generated/client'
 
 // Initiate your Supabase client

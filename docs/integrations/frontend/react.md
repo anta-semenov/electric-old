@@ -16,7 +16,7 @@ The context provider provides your Electric [Client](../../usage/data-access/cli
 In React, [Context](https://reactjs.org/docs/context.html) provides a way to pass data through the component tree without having to pass props down manually at every level. ElectricSQL provides a `makeElectricContext` function that constructs an `ElectricProvider` [Context.Provider](https://reactjs.org/docs/context.html#contextprovider) and `useElectric` hook:
 
 ```tsx
-import { makeElectricContext } from 'electric-sql/react'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
 import { Electric } from './generated/client'
 
 const { ElectricProvider, useElectric } = makeElectricContext<Electric>()
@@ -35,9 +35,9 @@ We provide this dynamic API rather than static `ElectricProvider` and `useElectr
 ```tsx
 // wrapper.tsx
 import React, { ReactNode, useEffect, useState } from 'react'
-import { insecureAuthToken } from 'electric-sql/auth'
-import { makeElectricContext } from 'electric-sql/react'
-import { ElectricDatabase, electrify } from 'electric-sql/wa-sqlite'
+import { insecureAuthToken } from '@anta-semenov/electric-sql/auth'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
+import { ElectricDatabase, electrify } from '@anta-semenov/electric-sql/wa-sqlite'
 import { Electric, schema } from './generated/client'
 
 const { ElectricProvider, useElectric } = makeElectricContext<Electric>()
@@ -124,7 +124,7 @@ const ExampleComponent = () => {
 
 ```tsx
 import React from 'react'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { useElectric } from './wrapper'
 
 const Component = () => {
@@ -176,7 +176,7 @@ const { results, error, updatedAt } = useLiveQuery(runQuery)
 With a signature of:
 
 ```tsx
-import { LiveResultContext } from 'electric-sql/client/model/model'
+import { LiveResultContext } from '@anta-semenov/electric-sql/client/model/model'
 
 export interface LiveResultUpdate<T> {
   results?: T
@@ -268,7 +268,7 @@ function useLiveQuery<Res>(
 
 ```tsx
 import React from 'react'
-import { useConnectivityState } from 'electric-sql/react'
+import { useConnectivityState } from '@anta-semenov/electric-sql/react'
 
 const ConnectivityMonitor = () => {
   const connectivityState = useConnectivityState()

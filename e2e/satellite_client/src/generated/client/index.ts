@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { Prisma } from './prismaClient';
-import { type TableSchema, DbSchema, Relation, ElectricClient, type HKT } from 'electric-sql/client/model';
+import { type TableSchema, DbSchema, Relation, ElectricClient, type HKT } from '@anta-semenov/electric-sql/client/model';
 import migrations from './migrations';
 import pgMigrations from './pg-migrations';
 

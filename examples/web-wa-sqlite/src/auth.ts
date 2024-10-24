@@ -1,5 +1,5 @@
-import { insecureAuthToken } from 'electric-sql/auth'
-import { genUUID } from 'electric-sql/util'
+import { insecureAuthToken } from '@anta-semenov/electric-sql/auth'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 
 // Generate an insecure authentication JWT.
 // See https://electric-sql.com/docs/usage/auth for more details.

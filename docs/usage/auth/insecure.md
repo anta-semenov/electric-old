@@ -50,7 +50,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJ1c2VyX2lkIjoiMSIsImlhdCI6MTY4NDg3ODEwM30.
 Use the function to initialize the client and have your replication connection successfully authenticate with the server instance we started above:
 
 ```tsx
-import { electrify } from 'electric-sql/wa-sqlite'
+import { electrify } from '@anta-semenov/electric-sql/wa-sqlite'
 
 const userId = '...'
 const token = unsignedJWT(userId)

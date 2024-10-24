@@ -5,8 +5,8 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { TouchBackend } from 'react-dnd-touch-backend'
 
-import { useLiveQuery } from 'electric-sql/react'
-import { genUUID } from 'electric-sql/util'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 
 /* prettier-ignore */
 import { App, ConnectivityControl, PlayersWidget, TournamentWidget } from '../../components'

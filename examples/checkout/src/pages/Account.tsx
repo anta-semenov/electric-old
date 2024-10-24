@@ -13,7 +13,7 @@ import {
 } from '@ionic/react'
 import { useContext } from 'react'
 import { SupabaseContext } from '../SupabaseContext'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { useElectric, type OrderWithItems } from '../electric'
 import { formatPrice, statusDisplay, statusColor, type Status } from '../utils'
 

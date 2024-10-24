@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useLiveQuery } from 'electric-sql/vuejs'
-import { genUUID } from 'electric-sql/util'
+import { useLiveQuery } from '@anta-semenov/electric-sql/vuejs'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 import { injectElectric } from './electric'
 
 const { db } = injectElectric()!

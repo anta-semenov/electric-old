@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ToolbarTabsProps } from '../tabs'
-import { ConnectivityState } from 'electric-sql/util'
+import { ConnectivityState } from '@anta-semenov/electric-sql/util'
 import {
   Badge,
   Box,

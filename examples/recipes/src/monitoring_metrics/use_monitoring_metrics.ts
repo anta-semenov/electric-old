@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useElectric } from '../electric/ElectricWrapper'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 
 export const useMonitoringMetric = ({
   metricType,

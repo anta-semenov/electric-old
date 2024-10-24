@@ -2,7 +2,7 @@ import createPool, { sql } from '@databases/pg'
 import fs from 'fs'
 import path from 'path'
 import * as url from 'url'
-import { getConfig } from 'electric-sql/cli'
+import { getConfig } from '@anta-semenov/electric-sql/cli'
 import { v4 as uuidv4 } from 'uuid'
 
 /*

@@ -2,9 +2,9 @@ import test from 'ava'
 import fs from 'fs/promises'
 import path from 'path'
 import { buildMigrations } from '../../src/migrations/builder'
-import { sqliteBuilder } from 'electric-sql/migrators/query-builder'
+import { sqliteBuilder } from '@anta-semenov/electric-sql/migrators/query-builder'
 import { loadMigrations } from '../../src/migrations/builder'
-import { Relation } from 'electric-sql/client/model'
+import { Relation } from '@anta-semenov/electric-sql/client/model'
 
 const migrationsFolder = path.join(
   '../../clients/typescript/test/migrators/support/migrations'

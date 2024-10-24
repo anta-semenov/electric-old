@@ -16,7 +16,7 @@ npm install better-sqlite3
 
 ```tsx
 import Database from 'better-sqlite3'
-import { electrify } from 'electric-sql/node'
+import { electrify } from '@anta-semenov/electric-sql/node'
 
 // Import your generated database schema.
 import { schema } from './generated/client'

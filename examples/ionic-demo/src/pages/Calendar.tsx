@@ -22,7 +22,7 @@ import {
   IonItemSliding,
 } from '@ionic/react'
 import { useEffect, useState, useMemo, useRef } from 'react'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { useElectric, Appointment as AppointmentBase } from '../electric'
 
 import './Calendar.css'

@@ -16,9 +16,9 @@ import {
   shirtOutline,
 } from 'ionicons/icons'
 
-import { LIB_VERSION } from 'electric-sql/version'
-import { uniqueTabId } from 'electric-sql/util'
-import { ElectricDatabase, electrify } from 'electric-sql/wa-sqlite'
+import { LIB_VERSION } from '@anta-semenov/electric-sql/version'
+import { uniqueTabId } from '@anta-semenov/electric-sql/util'
+import { ElectricDatabase, electrify } from '@anta-semenov/electric-sql/wa-sqlite'
 import { ElectricProvider, Electric, schema } from './electric'
 
 import Shop from './pages/Shop'
@@ -34,7 +34,7 @@ interface MainRoutesProps {
   onElectricLoaded: () => void
 }
 
-const MainRoutes = ({onElectricLoaded}: MainRoutesProps) => {
+const MainRoutes = ({ onElectricLoaded }: MainRoutesProps) => {
   const [electric, setElectric] = useState<Electric>()
   const { supabase } = useContext(SupabaseContext)!
 

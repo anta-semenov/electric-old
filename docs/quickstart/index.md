@@ -79,7 +79,7 @@ ELECTRIC GRANT ALL
 Wrap your local [database driver](../integrations/drivers/index.md) with a type-safe, schema-aware [database Client](../usage/data-access/client.md):
 
 ```tsx
-import { electrify, ElectricDatabase } from 'electric-sql/wa-sqlite'
+import { electrify, ElectricDatabase } from '@anta-semenov/electric-sql/wa-sqlite'
 import { schema } from './generated/client'
 
 const config = {
@@ -160,7 +160,7 @@ const item = await db.items.create({
 Writes automatically cause any relevant live queries to update. For example, if you take the following component:
 
 ```tsx
-import { genUUID } from 'electric-sql/util'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 
 const MyComponent = () => {
   const { db } = useElectric()!

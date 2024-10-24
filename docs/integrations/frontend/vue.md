@@ -16,7 +16,7 @@ The dependency injection provides your Electric [Client](../../usage/data-access
 In Vue.js, [dependency injection](https://vuejs.org/api/composition-api-dependency-injection.html) provides a way to pass data through the component tree without having to pass props down manually at every level. ElectricSQL provides a `makeElectricDependencyInjector` function that constructs a `provideElectric` [provider method](https://vuejs.org/api/composition-api-dependency-injection.html#provide) and an `injectElectric` [injector method](https://vuejs.org/api/composition-api-dependency-injection.html#inject).
 
 ```ts
-import { makeElectricDependencyInjector } from 'electric-sql/vuejs'
+import { makeElectricDependencyInjector } from '@anta-semenov/electric-sql/vuejs'
 import { Electric } from './generated/client'
 
 const {
@@ -39,8 +39,8 @@ We provide this dynamic API rather than static `provideElectric` and `injectElec
 // ElectricProvider.vue
 <script lang="ts" setup>
 import { onMounted, shallowRef } from 'vue'
-import { ElectricDatabase, electrify } from 'electric-sql/wa-sqlite'
-import { insecureAuthToken } from 'electric-sql/auth'
+import { ElectricDatabase, electrify } from '@anta-semenov/electric-sql/wa-sqlite'
+import { insecureAuthToken } from '@anta-semenov/electric-sql/auth'
 import { provideElectric } from './electric'
 import { Electric, schema } from './generated/client'
 
@@ -103,7 +103,7 @@ const generate = async () => {
 ```html
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useLiveQuery } from 'electric-sql/vuejs'
+import { useLiveQuery } from '@anta-semenov/electric-sql/vuejs'
 import { injectElectric } from './electric'
 
 const { db } = useElectric()!
@@ -206,7 +206,7 @@ const { results } = useLiveQuery(
 
 ```vue
 <script lang="ts" setup>
-import { useConnectivityState } from 'electric-sql/vuejs'
+import { useConnectivityState } from '@anta-semenov/electric-sql/vuejs'
 
 // assume Electric has been provided by a parent component
 const connectivityState = useConnectivityState()

@@ -1,9 +1,9 @@
 import { ReactElement, useEffect, useState } from 'react'
-import { makeElectricContext } from 'electric-sql/react'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
 import { authToken } from './auth.ts'
-import { LIB_VERSION } from 'electric-sql/version'
-import { uniqueTabId } from 'electric-sql/util'
-import { ElectricDatabase, electrify } from 'electric-sql/browser'
+import { LIB_VERSION } from '@anta-semenov/electric-sql/version'
+import { uniqueTabId } from '@anta-semenov/electric-sql/util'
+import { ElectricDatabase, electrify } from '@anta-semenov/electric-sql/browser'
 import { Electric, schema } from '../generated/client/index.ts'
 
 const { ElectricProvider, useElectric } = makeElectricContext<Electric>()

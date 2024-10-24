@@ -110,7 +110,7 @@ fs.writeFileSync(pgMigrationsPath, 'export default []')
 // fix the generated client import path to point to local schema
 const clientStr = fs.readFileSync(generatedClientPath).toString()
 const fixedClientStr = clientStr.replace(
-  'electric-sql/client/model',
+  '@anta-semenov/electric-sql/client/model',
   '../../../src/client/model'
 )
 fs.writeFileSync(generatedClientPath, fixedClientStr)

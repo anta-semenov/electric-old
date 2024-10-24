@@ -1,4 +1,4 @@
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useRef } from 'react'
 import { BsTrash3 as DeleteIcon } from 'react-icons/bs'

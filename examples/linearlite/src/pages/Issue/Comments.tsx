@@ -1,4 +1,4 @@
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'

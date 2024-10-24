@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useElectric } from '../electric/ElectricWrapper'
-import { useLiveQuery } from 'electric-sql/react'
-import { genUUID } from 'electric-sql/util'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 
 export const useBackgroundJobs = ({ maxNumJobs }: { maxNumJobs?: number }) => {
   const { db } = useElectric()!

@@ -9,7 +9,7 @@ import {
   IonRow,
 } from '@ionic/react'
 import { Item, useElectric } from '../electric'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 
 import './Shop.css'
 import Logo from '../assets/logo.svg'

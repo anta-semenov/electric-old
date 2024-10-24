@@ -20,8 +20,8 @@ import {
   pgBuilder,
   sqliteBuilder,
   Dialect,
-} from 'electric-sql/migrators/query-builder'
-import { DbSchema } from 'electric-sql/client'
+} from '@anta-semenov/electric-sql/migrators/query-builder'
+import { DbSchema } from '@anta-semenov/electric-sql/client'
 import { serializeDbDescription } from '../util/serialize'
 
 // Rather than run `npx prisma` we resolve the path to the prisma binary so that
@@ -34,7 +34,7 @@ import { serializeDbDescription } from '../util/serialize'
 const require = Module.createRequire(import.meta.url)
 const prismaPath = require.resolve('prisma')
 const generatorPath = path.join(
-  path.dirname(require.resolve('@electric-sql/prisma-generator')),
+  path.dirname(require.resolve('@anta-semenov/electric-sql-prisma-generator')),
   'bin.js'
 )
 
@@ -357,7 +357,7 @@ async function bundleDbDescription(dbDescription: DbSchema, outFolder: string) {
   const dbDescriptionStr = dedent`
     import migrations from './migrations';
     import pgMigrations from './pg-migrations';
-    import { type TableSchemas, DbSchema, Relation, ElectricClient } from 'electric-sql/client/model';
+    import { type TableSchemas, DbSchema, Relation, ElectricClient } from '@anta-semenov/electric-sql/client/model';
 
     const tableSchemas = ${serializedDbDescription} as unknown as TableSchemas
 
@@ -487,7 +487,7 @@ async function createElectricClientSchema(
       output        = "${escapePathForString(output)}"
       relationModel = "false"
     }
-    
+
     ${introspectedSchema}`
 
   await fs.writeFile(prismaSchemaFile, schema)
@@ -513,7 +513,7 @@ async function createPrismaClientSchema(
       provider = "prisma-client-js"
       output   = "${escapePathForString(output)}"
     }
-    
+
     ${introspectedSchema}`
 
   await fs.writeFile(prismaSchemaFile, schema)
@@ -738,8 +738,8 @@ async function fetchMigrations(
     options.protocol === 'http:'
       ? http
       : options.protocol === 'https:'
-      ? https
-      : undefined
+        ? https
+        : undefined
 
   if (requestModule === undefined)
     throw new TypeError(

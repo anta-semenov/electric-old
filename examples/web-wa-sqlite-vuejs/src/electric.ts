@@ -1,4 +1,4 @@
-import { makeElectricDependencyInjector } from 'electric-sql/vuejs'
+import { makeElectricDependencyInjector } from '@anta-semenov/electric-sql/vuejs'
 import { Electric } from './generated/client'
 
 const { provideElectric, injectElectric } =

@@ -1,5 +1,5 @@
 import { dedent } from 'ts-dedent'
-import { DbSchema } from 'electric-sql/client'
+import { DbSchema } from '@anta-semenov/electric-sql/client'
 
 /**
  * Custom serialization function that serializes the DB description

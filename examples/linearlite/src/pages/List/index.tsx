@@ -1,7 +1,7 @@
 import TopFilter from '../../components/TopFilter'
 import IssueList from './IssueList'
 import { Issue, useElectric } from '../../electric'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { useParams } from 'react-router-dom'
 import { useFilterState, filterStateToWhere } from '../../utils/filterState'
 

@@ -6,7 +6,7 @@ import {
   Relation,
   ElectricClient,
   type HKT,
-} from 'electric-sql/client/model'
+} from '@anta-semenov/electric-sql/client/model'
 import migrations from './migrations'
 
 /////////////////////////////////////////

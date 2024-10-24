@@ -18,7 +18,7 @@ See the [PGlite repo](https://github.com/electric-sql/pglite/) for more informat
 
 ```tsx
 // Import the PGlite database client.
-import { electrify } from 'electric-sql/pglite'
+import { electrify } from '@anta-semenov/electric-sql/pglite'
 
 // Import the adapter to electrify PGlite from the ElectricSQL library.
 import { PGlite } from '@electric-sql/pglite'

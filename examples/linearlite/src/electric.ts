@@ -1,7 +1,7 @@
-import { LIB_VERSION } from 'electric-sql/version'
-import { makeElectricContext } from 'electric-sql/react'
-import { uniqueTabId, genUUID } from 'electric-sql/util'
-import { insecureAuthToken } from 'electric-sql/auth'
+import { LIB_VERSION } from '@anta-semenov/electric-sql/version'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
+import { uniqueTabId, genUUID } from '@anta-semenov/electric-sql/util'
+import { insecureAuthToken } from '@anta-semenov/electric-sql/auth'
 import { Electric, schema } from './generated/client'
 export type { Issue } from './generated/client'
 
@@ -33,7 +33,7 @@ export const DEBUG = debugParam ? debugParam === 'true' : DEV_MODE || DEBUG_ENV
 export let dbName: string
 
 const initPGlite = async () => {
-  const { electrify } = await import('electric-sql/pglite')
+  const { electrify } = await import('@anta-semenov/electric-sql/pglite')
   const { PGlite } = await import('@electric-sql/pglite')
 
   dbName = `idb://${discriminator}-${LIB_VERSION}-${tabId}.db`
@@ -53,7 +53,7 @@ const initPGlite = async () => {
 }
 
 export const initWaSqlite = async () => {
-  const { electrify, ElectricDatabase } = await import('electric-sql/wa-sqlite')
+  const { electrify, ElectricDatabase } = await import('@anta-semenov/electric-sql/wa-sqlite')
 
   dbName = `${discriminator}-${LIB_VERSION}-${tabId}.db`
   console.log('dbName', dbName)

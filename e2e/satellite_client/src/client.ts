@@ -1,12 +1,12 @@
 import pg from 'pg'
 import SQLiteDatabase from 'better-sqlite3'
-import type { Database as BetterSqliteDatabase } from 'electric-sql/node'
+import type { Database as BetterSqliteDatabase } from '@anta-semenov/electric-sql/node'
 import { ElectricConfig } from 'electric-sql'
-import { mockSecureAuthToken } from 'electric-sql/auth/secure'
-import type { Database as PgDatabase } from 'electric-sql/node-postgres'
-import { setLogLevel } from 'electric-sql/debug'
-import { electrify as electrifySqlite } from 'electric-sql/node'
-import { electrify as electrifyPg } from 'electric-sql/node-postgres'
+import { mockSecureAuthToken } from '@anta-semenov/electric-sql/auth/secure'
+import type { Database as PgDatabase } from '@anta-semenov/electric-sql/node-postgres'
+import { setLogLevel } from '@anta-semenov/electric-sql/debug'
+import { electrify as electrifySqlite } from '@anta-semenov/electric-sql/node'
+import { electrify as electrifyPg } from '@anta-semenov/electric-sql/node-postgres'
 import { v4 as uuidv4 } from 'uuid'
 import {
   schema as dalSchema,
@@ -15,21 +15,21 @@ import {
 } from './generated/client'
 import { schema as noDalSchema } from './generated/client/db-description'
 export { JsonNull } from './generated/client'
-import { globalRegistry } from 'electric-sql/satellite'
-import { QualifiedTablename, SatelliteErrorCode } from 'electric-sql/util'
-import { Shape } from 'electric-sql/satellite'
+import { globalRegistry } from '@anta-semenov/electric-sql/satellite'
+import { QualifiedTablename, SatelliteErrorCode } from '@anta-semenov/electric-sql/util'
+import { Shape } from '@anta-semenov/electric-sql/satellite'
 import {
   pgBuilder,
   sqliteBuilder,
   QueryBuilder,
-} from 'electric-sql/migrators/builder'
+} from '@anta-semenov/electric-sql/migrators/builder'
 import {
   postgresConverter,
   sqliteConverter,
   PgBasicType
-} from 'electric-sql/client'
-import type { AnyTable, AnyTableSchema } from 'electric-sql/client'
-import { Row } from 'electric-sql/util'
+} from '@anta-semenov/electric-sql/client'
+import type { AnyTable, AnyTableSchema } from '@anta-semenov/electric-sql/client'
+import { Row } from '@anta-semenov/electric-sql/util'
 import { dedent } from 'ts-dedent'
 
 setLogLevel('DEBUG')

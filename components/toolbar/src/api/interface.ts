@@ -1,7 +1,7 @@
-import { Shape } from 'electric-sql/satellite'
-import { Row, Statement, ConnectivityState } from 'electric-sql/util'
+import { Shape } from '@anta-semenov/electric-sql/satellite'
+import { Row, Statement, ConnectivityState } from '@anta-semenov/electric-sql/util'
 import { SqlDialect } from './statements'
-import { SyncStatus } from 'electric-sql/client/model'
+import { SyncStatus } from '@anta-semenov/electric-sql/client/model'
 
 export type UnsubscribeFunction = () => void
 

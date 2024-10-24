@@ -1,5 +1,5 @@
 import { useElectric } from '../electric'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { IonBadge } from '@ionic/react'
 
 function BasketCount() {

@@ -1,4 +1,4 @@
-import { makeElectricContext } from 'electric-sql/react'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
 import type { Electric } from './generated/client'
 import type {
   Items as Item,

@@ -1,13 +1,13 @@
 import { vi, expect, test, describe, beforeEach, afterAll } from 'vitest'
 import Database from 'better-sqlite3'
-import { electrify as electrifySqlite } from 'electric-sql/drivers/better-sqlite3'
+import { electrify as electrifySqlite } from '@anta-semenov/electric-sql/drivers/better-sqlite3'
 import { PGlite } from '@electric-sql/pglite'
-import { electrify as electrifyPg } from 'electric-sql/drivers/pglite'
-import { MockRegistry } from 'electric-sql/satellite'
+import { electrify as electrifyPg } from '@anta-semenov/electric-sql/drivers/pglite'
+import { MockRegistry } from '@anta-semenov/electric-sql/satellite'
 import { schema } from './generated'
 import { clientApi } from '../src'
 import { MockIndexDB, MockLocation } from './mocks'
-import { ConnectivityState, QualifiedTablename } from 'electric-sql/util'
+import { ConnectivityState, QualifiedTablename } from '@anta-semenov/electric-sql/util'
 
 interface TestConfig {
   dialect: 'sqlite' | 'postgres'

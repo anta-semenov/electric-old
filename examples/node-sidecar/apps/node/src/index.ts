@@ -1,7 +1,7 @@
 import { argv } from 'process'
 import * as readline from 'readline'
 import Database from 'better-sqlite3'
-import { genUUID } from 'electric-sql/util'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 import { SocketIPC } from './ipc/socket.js'
 import { parseConfigFile } from './util/config.js'
 

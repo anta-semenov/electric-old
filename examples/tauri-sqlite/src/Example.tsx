@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
-import { LIB_VERSION } from 'electric-sql/version'
-import { makeElectricContext, useLiveQuery } from 'electric-sql/react'
-import { genUUID, uniqueTabId } from 'electric-sql/util'
-import { createDatabase, electrify } from 'electric-sql/tauri'
+import { LIB_VERSION } from '@anta-semenov/electric-sql/version'
+import { makeElectricContext, useLiveQuery } from '@anta-semenov/electric-sql/react'
+import { genUUID, uniqueTabId } from '@anta-semenov/electric-sql/util'
+import { createDatabase, electrify } from '@anta-semenov/electric-sql/tauri'
 
 import { authToken } from './auth'
 import { Electric, Items as Item, schema } from './generated/client'

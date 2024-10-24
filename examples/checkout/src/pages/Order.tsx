@@ -15,7 +15,7 @@ import {
 import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { SupabaseContext } from '../SupabaseContext'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { useElectric, type OrderWithItems } from '../electric'
 import { formatPrice, statusDisplay, statusColor, Status } from '../utils'
 

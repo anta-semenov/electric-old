@@ -1,8 +1,8 @@
 import clsx from 'clsx'
 import React, { useEffect, useState } from 'react'
 
-import { useLiveQuery } from 'electric-sql/react'
-import { genUUID } from 'electric-sql/util'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 /* prettier-ignore */
 import { App, ConnectivityControl, ItemsWidget, SliderInput } from '../../components'
 import { useElectric } from '../../electric'

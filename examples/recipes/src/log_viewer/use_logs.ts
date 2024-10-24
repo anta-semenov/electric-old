@@ -1,5 +1,5 @@
 import { useElectric } from '../electric/ElectricWrapper'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 
 export const useLogs = ({
   maxNumberOfLogs = 10,

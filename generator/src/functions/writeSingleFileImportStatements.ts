@@ -30,7 +30,7 @@ export const writeSingleFileImportStatements: WriteStatements = (
     'type HKT',
   ]
 
-  writeImport(`{ ${imports.join(', ')} }`, 'electric-sql/client/model')
+  writeImport(`{ ${imports.join(', ')} }`, '@anta-semenov/electric-sql/client/model')
 
   writeImport(`migrations`, './migrations')
   writeImport(`pgMigrations`, './pg-migrations')

@@ -1,7 +1,7 @@
 import { Transition } from '@headlessui/react'
 import { useRef } from 'react'
 import classnames from 'classnames'
-import { useConnectivityState } from 'electric-sql/react'
+import { useConnectivityState } from '@anta-semenov/electric-sql/react'
 import { useClickOutside } from '../hooks/useClickOutside'
 import { useElectric } from '../electric'
 import Toggle from './Toggle'

@@ -1,6 +1,6 @@
 // @ts-expect-error ignore unused React
 import React from 'react'
-import { useConnectivityState } from 'electric-sql/react'
+import { useConnectivityState } from '@anta-semenov/electric-sql/react'
 import clsx from 'clsx'
 import { useElectric } from '../../electric'
 import styles from './styles.module.css'

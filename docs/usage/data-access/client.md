@@ -32,7 +32,7 @@ The exact code for instantiating your database client depends on the local datab
 For example, for [wa-sqlite](../../integrations/drivers/web/wa-sqlite.md) in the web browser:
 
 ```tsx
-import { ElectricDatabase, electrify } from 'electric-sql/wa-sqlite'
+import { ElectricDatabase, electrify } from '@anta-semenov/electric-sql/wa-sqlite'
 import { schema } from './generated/client'
 
 const config = {

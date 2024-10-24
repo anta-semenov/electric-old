@@ -16,7 +16,7 @@ import {
   IonModal,
 } from '@ionic/react'
 import { useEffect, useRef, useState } from 'react'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { BasketItem, useElectric, type Electric, type BasketItemWithItem } from '../electric'
 
 import EmptyCart from '../components/EmptyCart'

@@ -14,7 +14,7 @@ import {
   IonLabel,
 } from '@ionic/react'
 import { useState, useMemo } from 'react'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { useElectric, Appointment as AppointmentBase } from '../electric'
 
 import './New.css'

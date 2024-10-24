@@ -5,8 +5,8 @@ import {Electric, schema} from './generated/client';
 
 import {open as openSQLiteConnection} from '@op-engineering/op-sqlite';
 
-import {electrify} from 'electric-sql/op-sqlite';
-import {makeElectricContext} from 'electric-sql/react';
+import {electrify} from '@anta-semenov/electric-sql/op-sqlite';
+import {makeElectricContext} from '@anta-semenov/electric-sql/react';
 
 const {ElectricProvider, useElectric} = makeElectricContext<Electric>();
 

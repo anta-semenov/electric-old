@@ -1,5 +1,5 @@
-import {insecureAuthToken} from 'electric-sql/auth';
-import {genUUID} from 'electric-sql/util';
+import {insecureAuthToken} from '@anta-semenov/electric-sql/auth';
+import {genUUID} from '@anta-semenov/electric-sql/util';
 
 // This is just a demo. In a real app, the user ID would
 // usually come from somewhere else :)

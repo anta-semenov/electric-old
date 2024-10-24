@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useElectric } from '../electric/ElectricWrapper'
-import { useLiveQuery } from 'electric-sql/react'
-import { genUUID } from 'electric-sql/util'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 import { JsonValueType, Requests, Responses } from '../generated/client'
 
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH'

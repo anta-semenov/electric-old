@@ -5,8 +5,8 @@ import { Electric, schema } from './generated/client'
 
 import * as SQLite from 'expo-sqlite/next'
 
-import { electrify } from 'electric-sql/expo-next'
-import { makeElectricContext } from 'electric-sql/react'
+import { electrify } from '@anta-semenov/electric-sql/expo-next'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
 
 const { ElectricProvider, useElectric } = makeElectricContext<Electric>()
 

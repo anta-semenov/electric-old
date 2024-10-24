@@ -18,7 +18,7 @@ describe('writeSingleFileImportStatements', () => {
       writeSingleFileImportStatements(dmmf, writer)
     )
     expect(fileString).toContain(
-      "import { type TableSchema, DbSchema, Relation, ElectricClient, type HKT } from 'electric-sql/client/model';"
+      "import { type TableSchema, DbSchema, Relation, ElectricClient, type HKT } from '@anta-semenov/electric-sql/client/model';"
     )
   })
 
@@ -36,7 +36,7 @@ describe('writeSingleFileImportStatements', () => {
     )
 
     expect(fileString).toContain(
-      "import { type TableSchema, DbSchema, ElectricClient, type HKT } from 'electric-sql/client/model';"
+      "import { type TableSchema, DbSchema, ElectricClient, type HKT } from '@anta-semenov/electric-sql/client/model';"
     )
   })
 })

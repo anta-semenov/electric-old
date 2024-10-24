@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import { genUUID, sleepAsync } from 'electric-sql/util'
+import { genUUID, sleepAsync } from '@anta-semenov/electric-sql/util'
 
 import cache from './cache'
 import { DB, Demo } from './electric'

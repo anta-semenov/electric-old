@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { useLiveQuery } from 'electric-sql/react'
-import { genUUID } from 'electric-sql/util'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 import { Items as Item } from './generated/client'
 import { useElectric } from './ElectricProvider'
 

@@ -4,15 +4,15 @@ import {
   ToolbarInterface,
   UnsubscribeFunction,
 } from './interface'
-import { Row, Statement, ConnectivityState } from 'electric-sql/util'
-import { SyncStatus } from 'electric-sql/client/model'
+import { Row, Statement, ConnectivityState } from '@anta-semenov/electric-sql/util'
+import { SyncStatus } from '@anta-semenov/electric-sql/client/model'
 import {
   Registry,
   GlobalRegistry,
   Satellite,
   Shape,
   SatelliteProcess,
-} from 'electric-sql/satellite'
+} from '@anta-semenov/electric-sql/satellite'
 import {
   getDbTables,
   getElectricTables,

@@ -6,11 +6,11 @@ import {
   parseMetadata,
   MetaData,
   makeMigration,
-} from 'electric-sql/migrators'
-import { isObject } from 'electric-sql/util'
-import { QueryBuilder } from 'electric-sql/migrators/query-builder'
-import { TableName, DbSchema, createDbDescription } from 'electric-sql/client'
-import { SatOpMigrate_Table } from 'electric-sql/protocol'
+} from '@anta-semenov/electric-sql/migrators'
+import { isObject } from '@anta-semenov/electric-sql/util'
+import { QueryBuilder } from '@anta-semenov/electric-sql/migrators/query-builder'
+import { TableName, DbSchema, createDbDescription } from '@anta-semenov/electric-sql/client'
+import { SatOpMigrate_Table } from '@anta-semenov/electric-sql/protocol'
 
 /*
  * This file defines functions to build migrations

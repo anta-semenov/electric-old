@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { useLiveQuery } from 'electric-sql/react'
-import { genUUID } from 'electric-sql/util'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
+import { genUUID } from '@anta-semenov/electric-sql/util'
 
 import api from '../../api'
 import { App, CloudApp, LatencyWidget } from '../../components'

@@ -27,7 +27,7 @@ See the [wa-sqlite repo](https://github.com/rhashimoto/wa-sqlite) for more infor
 ## Usage
 
 ```tsx
-import { electrify, ElectricDatabase } from 'electric-sql/wa-sqlite'
+import { electrify, ElectricDatabase } from '@anta-semenov/electric-sql/wa-sqlite'
 
 // Import your generated database schema.
 import { schema } from './generated/client'

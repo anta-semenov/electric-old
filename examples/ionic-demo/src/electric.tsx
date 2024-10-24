@@ -1,8 +1,8 @@
-import { LIB_VERSION } from 'electric-sql/version'
+import { LIB_VERSION } from '@anta-semenov/electric-sql/version'
 import { ElectricConfig } from 'electric-sql'
-import { makeElectricContext } from 'electric-sql/react'
-import { uniqueTabId, genUUID } from 'electric-sql/util'
-import { insecureAuthToken } from 'electric-sql/auth'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
+import { uniqueTabId, genUUID } from '@anta-semenov/electric-sql/util'
+import { insecureAuthToken } from '@anta-semenov/electric-sql/auth'
 import { Capacitor } from '@capacitor/core'
 import { Electric, schema, Appointments } from './generated/client'
 
@@ -57,13 +57,13 @@ export const initElectric = async () => {
 }
 
 async function initWaSQLite(dbName: string, config: ElectricConfig) {
-  const { ElectricDatabase, electrify } = await import('electric-sql/wa-sqlite')
+  const { ElectricDatabase, electrify } = await import('@anta-semenov/electric-sql/wa-sqlite')
   const conn = await ElectricDatabase.init(dbName)
   return await electrify(conn, schema, config)
 }
 
 async function initCapacitorSQLite(dbName: string, config: ElectricConfig) {
-  const { electrify } = await import('electric-sql/capacitor')
+  const { electrify } = await import('@anta-semenov/electric-sql/capacitor')
   const { CapacitorSQLite, SQLiteConnection } = await import(
     '@capacitor-community/sqlite'
   )

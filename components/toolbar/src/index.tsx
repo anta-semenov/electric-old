@@ -21,9 +21,9 @@ import {
   TOOLBAR_ELEMENT_ID,
   TOOLBAR_CONTAINER_ID,
 } from './utils/portal'
-import { ElectricClient } from 'electric-sql/client/model'
+import { ElectricClient } from '@anta-semenov/electric-sql/client/model'
 
-import { Registry, GlobalRegistry } from 'electric-sql/satellite'
+import { Registry, GlobalRegistry } from '@anta-semenov/electric-sql/satellite'
 
 export type ToolbarProps = {
   api: ToolbarInterface

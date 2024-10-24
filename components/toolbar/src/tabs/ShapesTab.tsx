@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToolbarTabsProps } from '../tabs'
 import { Badge, Box, Table, Text } from '@radix-ui/themes'
-import { SyncStatus } from 'electric-sql/client/model'
+import { SyncStatus } from '@anta-semenov/electric-sql/client/model'
 
 export default function ShapesTab({
   dbName,

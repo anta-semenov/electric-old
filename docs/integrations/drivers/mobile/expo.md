@@ -29,7 +29,7 @@ import CryptoPolyfillWarning from './_crypto_polyfill_warning.md'
 
 ```ts
 import * as SQLite from 'expo-sqlite'
-import { electrify } from 'electric-sql/expo'
+import { electrify } from '@anta-semenov/electric-sql/expo'
 
 // Create the expo-sqlite database connection. The first argument
 // is your database name. Changing this will create/use a new
@@ -43,7 +43,7 @@ const conn = SQLite.openDatabase('electric.db')
 
 ```ts
 import * as SQLite from 'expo-sqlite/next'
-import { electrify } from 'electric-sql/expo-next' 
+import { electrify } from '@anta-semenov/electric-sql/expo-next' 
 
 // Create the expo-sqlite database connection. The first argument
 // is your database name. Changing this will create/use a new

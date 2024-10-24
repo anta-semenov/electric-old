@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
-import { LIB_VERSION } from 'electric-sql/version'
-import { makeElectricContext } from 'electric-sql/react'
-import { uniqueTabId } from 'electric-sql/util'
-import { electrify } from 'electric-sql/pglite'
+import { LIB_VERSION } from '@anta-semenov/electric-sql/version'
+import { makeElectricContext } from '@anta-semenov/electric-sql/react'
+import { uniqueTabId } from '@anta-semenov/electric-sql/util'
+import { electrify } from '@anta-semenov/electric-sql/pglite'
 import { PGlite } from '@electric-sql/pglite'
 
 import { authToken } from './auth'

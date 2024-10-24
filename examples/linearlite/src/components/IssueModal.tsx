@@ -1,7 +1,7 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { generateKeyBetween } from 'fractional-indexing'
-import { useLiveQuery } from 'electric-sql/react'
+import { useLiveQuery } from '@anta-semenov/electric-sql/react'
 import { useElectric } from '../electric'
 
 import { BsChevronRight as ChevronRight } from 'react-icons/bs'

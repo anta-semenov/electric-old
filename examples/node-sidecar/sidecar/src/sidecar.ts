@@ -1,6 +1,6 @@
 import Database from 'better-sqlite3'
-import { electrify } from 'electric-sql/node'
-import { DbSchema, ElectricClient } from 'electric-sql/client/model'
+import { electrify } from '@anta-semenov/electric-sql/node'
+import { DbSchema, ElectricClient } from '@anta-semenov/electric-sql/client/model'
 import { Server } from './ipc/server.js'
 import { HydratedConfig } from './util/config.js'
 

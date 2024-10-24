@@ -154,7 +154,7 @@ Your app connects to the Electric sync service in order to sync data on and off 
 The location of the sync service to connect to is configured using `config.url`. For example, for [wa-sqlite](../integrations/drivers/web/wa-sqlite.md) in the web browser:
 
 ```tsx
-import { ElectricDatabase, electrify } from 'electric-sql/wa-sqlite'
+import { ElectricDatabase, electrify } from '@anta-semenov/electric-sql/wa-sqlite'
 import { schema } from './generated/client'
 
 const config = {

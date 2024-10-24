@@ -28,7 +28,7 @@ The example below shows how to use the op-sqlite driver with Electric:
 
 ```tsx
 import { open as openOPSQLiteConn } from '@op-engineering/op-sqlite'
-import { electrify } from 'electric-sql/op-sqlite'
+import { electrify } from '@anta-semenov/electric-sql/op-sqlite'
 
 // Import your generated database schema.
 import { schema } from './generated/client'

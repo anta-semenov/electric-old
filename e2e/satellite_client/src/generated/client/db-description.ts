@@ -1,4 +1,4 @@
-import { type TableSchemas, DbSchema, Relation } from 'electric-sql/client/model';
+import { type TableSchemas, DbSchema, Relation } from '@anta-semenov/electric-sql/client/model';
 import migrations from './migrations';
 import pgMigrations from './pg-migrations';
 
