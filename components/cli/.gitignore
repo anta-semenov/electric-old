@@ -3,3 +3,8 @@
 dist/
 node_modules/
 .tmp/
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

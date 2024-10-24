@@ -8,3 +8,7 @@ yarn.lock
 yarn-error.log
 .pnpm-debug.log
 # dist
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

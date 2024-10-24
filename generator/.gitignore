@@ -6,3 +6,8 @@ test.db
 .tmp/
 build/
 .tool-versions
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
