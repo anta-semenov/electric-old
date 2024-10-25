@@ -1,6 +1,6 @@
 ARG ELIXIR_VERSION=1.17.0
 ARG OTP_VERSION=27.0
-ARG DEBIAN_VERSION=bookworm-20240513-slim
+ARG DEBIAN_VERSION=bookworm-20240612-slim
 
 ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
 ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
@@ -8,9 +8,11 @@ ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 FROM ${BUILDER_IMAGE} AS builder
 LABEL maintainer="info@electric-sql.com"
 
-RUN apt-get update -y && \
-    apt-get install -y build-essential git curl && \
-    apt-get clean && \
+RUN apt-get update -y
+RUN apt-get install -y build-essential
+RUN apt-get install -y git
+RUN apt-get install -y curl
+RUN apt-get clean && \
     rm -f /var/lib/apt/lists/*_*
 
 RUN mix local.hex --force && mix local.rebar --force
@@ -24,7 +26,7 @@ COPY mix.* /app/
 RUN mix deps.get
 RUN mix deps.compile
 
-RUN mix run --no-compile --no-start -e "Application.ensure_all_started(:tzdata); Tzdata.ReleaseUpdater.poll_for_update()"
+# RUN mix run --no-compile --no-start -e "Application.ensure_all_started(:tzdata); Tzdata.ReleaseUpdater.poll_for_update()"
 
 # These are ordered by change frequency, with the least frequently changing dir first.
 COPY rel /app/rel
@@ -40,9 +42,13 @@ RUN make compile ${MAKE_RELEASE_TASK}
 
 FROM ${RUNNER_IMAGE} AS runner_setup
 
-RUN apt-get update -y && \
-    apt-get install -y libstdc++6 openssl libncurses5 locales ca-certificates && \
-    apt-get clean && \
+RUN apt-get update -y
+RUN apt-get install -y libstdc++6
+RUN apt-get install -y openssl
+RUN apt-get install -y libncurses5
+RUN apt-get install -y locales
+RUN apt-get install -y ca-certificates
+RUN apt-get clean && \
     rm -f /var/lib/apt/lists/*_*
 
 # Set the locale
